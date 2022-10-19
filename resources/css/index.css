@@ -1,0 +1,47 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+:root {
+    --cell-size: 100px;
+}
+body {
+    margin: 0;
+}
+.gridContainer {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+
+    grid-template-columns: repeat(3, auto);
+    /* grid-template-rows: 100px 100px 100px; */
+
+    font-family: Helvetica, sans-serif;
+    font-size: 75px;    
+    font-weight: bold;
+    text-align: center;
+}
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border: 2px solid;
+    cursor: pointer;
+}
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3) {
+    border-top: none;
+}
+.cell:nth-child(3n + 1) {
+    border-left: none;
+}
+.cell:nth-child(3n + 3) {
+    border-right: none;
+}
+.cell:last-child,
+.cell:nth-child(8),
+.cell:nth-child(7) {
+    border-bottom: none;
+}
+
